@@ -160,8 +160,8 @@ PartD_ServiceCentre.exe
 
 The program will display the NUST Service Centre menu, where the user can select the required operation.
 
-## Repository
-
+##GitHub Repository
+https://github.com/Group-project143/DSA521S-Group-Mini-Project-2026-
 This repository contains the source code, algorithm implementations, supporting project files, diagrams, and documentation produced for the DSA521S Group Mini-Project.
 
 ## Institution
@@ -179,6 +179,7 @@ This repository contains the source code, algorithm implementations, supporting 
 | Liuma Ndara | 225009390 |
 | Ferrucio Nakale| 226075508 |
 | Ella Nangolo| 224023616 |
+**Submitted by: 226019241 – Asino David**
 
 ## Project Status
 
