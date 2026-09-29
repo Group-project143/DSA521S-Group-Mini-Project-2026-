@@ -1,11 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+public class MergeSort{
+
+    public static void mergeSort(int[] arr) {
+
+        // Base case
+        if (arr.length <= 1) {
+            return;
+        }
+
+        int middle = arr.length / 2;
+
+        int[] left = new int[middle];
+        int[] right = new int[arr.length - middle];
+
+        // Divide the array
+        for (int i = 0; i < middle; i++) {
+            left[i] = arr[i];
+        }
+
+        for (int i = middle; i < arr.length; i++) {
+            right[i - middle] = arr[i];
+        }
+
+        // Sort the two halves
+        mergeSort(left);
+        mergeSort(right);
+
+        // Merge them
+        merge(arr, left, right);
+    }
+
+    public static void merge(int[] arr, int[] left, int[] right) {
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while (i < left.length && j < right.length) {
+
+            if (left[i] <= right[j]) {
+                arr[k] = left[i];
+                i++;
+            } else {
+                arr[k] = right[j];
+                j++;
+            }
+
+            k++;
+        }
+
+        while (i < left.length) {
+            arr[k] = left[i];
+            i++;
+            k++;
+        }
+
+        while (j < right.length) {
+            arr[k] = right[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int[] numbers = {17, 5, 23, 8, 14, 3, 11, 20, 6, 9};
+
+        mergeSort(numbers);
+
+        System.out.print("Sorted array: ");
+
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
+}
